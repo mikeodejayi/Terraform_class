@@ -44,11 +44,12 @@ resource "aws_instance" "myFirstInstance" {
   }
 }
 
-# Create Elastic IP address
-resource "aws_eip" "myFirstInstance" {
-  vpc      = true
-  instance = aws_instance.myFirstInstance.id
-tags= {
-    Name = "my_elastic_ip"
+# Create Elastic IP address 
+resource "aws_eip" "lb" {
+    instance = aws_instance.myTerrainstance.id
+    domain   = "vpc"
+    tags= { 
+        Name = "jenkins_elstic_ip" 
+       }
   }
-}
+
