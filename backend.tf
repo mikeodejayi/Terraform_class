@@ -3,6 +3,6 @@ terraform {
     bucket = "mike7-bucket"
     key = "terraform.tfstate"
     region = "us-east-2"
-    dynamodb_table = "mike0207-Table-DB"
+    dynamodb_table = "mike-table-db"
   }
 }
